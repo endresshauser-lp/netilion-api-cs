@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class SparePartStatuses :  IEquatable<SparePartStatuses>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SparePartStatuses" /> class.
+        /// Initializes a new instance of the <see cref="_SparePartStatuses" /> class.
         /// </summary>
         /// <param name="sparePartStatuses">sparePartStatuses.</param>
         /// <param name="pagination">pagination.</param>
         public SparePartStatuses(List<SparePartStatusResponse> sparePartStatuses = default(List<SparePartStatusResponse>), Pagination pagination = default(Pagination))
         {
-            this.SparePartStatuses = sparePartStatuses;
+            this._SparePartStatuses = sparePartStatuses;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets SparePartStatuses
         /// </summary>
         [DataMember(Name="spare_part_statuses", EmitDefaultValue=false)]
-        public List<SparePartStatusResponse> SparePartStatuses { get; set; }
+        public List<SparePartStatusResponse> _SparePartStatuses { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SparePartStatuses {\n");
-            sb.Append("  SparePartStatuses: ").Append(SparePartStatuses).Append("\n");
+            sb.Append("  SparePartStatuses: ").Append(_SparePartStatuses).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.SparePartStatuses == input.SparePartStatuses ||
-                    this.SparePartStatuses != null &&
-                    input.SparePartStatuses != null &&
-                    this.SparePartStatuses.SequenceEqual(input.SparePartStatuses)
+                    this._SparePartStatuses == input._SparePartStatuses ||
+                    this._SparePartStatuses != null &&
+                    input._SparePartStatuses != null &&
+                    this._SparePartStatuses.SequenceEqual(input._SparePartStatuses)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SparePartStatuses != null)
-                    hashCode = hashCode * 59 + this.SparePartStatuses.GetHashCode();
+                if (this._SparePartStatuses != null)
+                    hashCode = hashCode * 59 + this._SparePartStatuses.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

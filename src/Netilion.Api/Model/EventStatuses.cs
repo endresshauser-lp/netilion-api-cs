@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class EventStatuses :  IEquatable<EventStatuses>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventStatuses" /> class.
+        /// Initializes a new instance of the <see cref="_EventStatuses" /> class.
         /// </summary>
         /// <param name="eventStatuses">eventStatuses.</param>
         /// <param name="pagination">pagination.</param>
         public EventStatuses(List<EventStatusResponse> eventStatuses = default(List<EventStatusResponse>), Pagination pagination = default(Pagination))
         {
-            this.EventStatuses = eventStatuses;
+            this._EventStatuses = eventStatuses;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets EventStatuses
         /// </summary>
         [DataMember(Name="event_statuses", EmitDefaultValue=false)]
-        public List<EventStatusResponse> EventStatuses { get; set; }
+        public List<EventStatusResponse> _EventStatuses { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class EventStatuses {\n");
-            sb.Append("  EventStatuses: ").Append(EventStatuses).Append("\n");
+            sb.Append("  EventStatuses: ").Append(_EventStatuses).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.EventStatuses == input.EventStatuses ||
-                    this.EventStatuses != null &&
-                    input.EventStatuses != null &&
-                    this.EventStatuses.SequenceEqual(input.EventStatuses)
+                    this._EventStatuses == input._EventStatuses ||
+                    this._EventStatuses != null &&
+                    input._EventStatuses != null &&
+                    this._EventStatuses.SequenceEqual(input._EventStatuses)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EventStatuses != null)
-                    hashCode = hashCode * 59 + this.EventStatuses.GetHashCode();
+                if (this._EventStatuses != null)
+                    hashCode = hashCode * 59 + this._EventStatuses.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class PermissionInheritances :  IEquatable<PermissionInheritances>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PermissionInheritances" /> class.
+        /// Initializes a new instance of the <see cref="_PermissionInheritances" /> class.
         /// </summary>
         /// <param name="permissionInheritances">permissionInheritances.</param>
         /// <param name="pagination">pagination.</param>
         public PermissionInheritances(List<PermissionInheritanceResponse> permissionInheritances = default(List<PermissionInheritanceResponse>), Pagination pagination = default(Pagination))
         {
-            this.PermissionInheritances = permissionInheritances;
+            this._PermissionInheritances = permissionInheritances;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets PermissionInheritances
         /// </summary>
         [DataMember(Name="permission_inheritances", EmitDefaultValue=false)]
-        public List<PermissionInheritanceResponse> PermissionInheritances { get; set; }
+        public List<PermissionInheritanceResponse> _PermissionInheritances { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PermissionInheritances {\n");
-            sb.Append("  PermissionInheritances: ").Append(PermissionInheritances).Append("\n");
+            sb.Append("  PermissionInheritances: ").Append(_PermissionInheritances).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.PermissionInheritances == input.PermissionInheritances ||
-                    this.PermissionInheritances != null &&
-                    input.PermissionInheritances != null &&
-                    this.PermissionInheritances.SequenceEqual(input.PermissionInheritances)
+                    this._PermissionInheritances == input._PermissionInheritances ||
+                    this._PermissionInheritances != null &&
+                    input._PermissionInheritances != null &&
+                    this._PermissionInheritances.SequenceEqual(input._PermissionInheritances)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PermissionInheritances != null)
-                    hashCode = hashCode * 59 + this.PermissionInheritances.GetHashCode();
+                if (this._PermissionInheritances != null)
+                    hashCode = hashCode * 59 + this._PermissionInheritances.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

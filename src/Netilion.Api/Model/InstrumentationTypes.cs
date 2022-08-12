@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class InstrumentationTypes :  IEquatable<InstrumentationTypes>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InstrumentationTypes" /> class.
+        /// Initializes a new instance of the <see cref="_InstrumentationTypes" /> class.
         /// </summary>
         /// <param name="instrumentationTypes">instrumentationTypes.</param>
         /// <param name="pagination">pagination.</param>
         public InstrumentationTypes(List<InstrumentationTypeResponse> instrumentationTypes = default(List<InstrumentationTypeResponse>), Pagination pagination = default(Pagination))
         {
-            this.InstrumentationTypes = instrumentationTypes;
+            this._InstrumentationTypes = instrumentationTypes;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets InstrumentationTypes
         /// </summary>
         [DataMember(Name="instrumentation_types", EmitDefaultValue=false)]
-        public List<InstrumentationTypeResponse> InstrumentationTypes { get; set; }
+        public List<InstrumentationTypeResponse> _InstrumentationTypes { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InstrumentationTypes {\n");
-            sb.Append("  InstrumentationTypes: ").Append(InstrumentationTypes).Append("\n");
+            sb.Append("  InstrumentationTypes: ").Append(_InstrumentationTypes).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.InstrumentationTypes == input.InstrumentationTypes ||
-                    this.InstrumentationTypes != null &&
-                    input.InstrumentationTypes != null &&
-                    this.InstrumentationTypes.SequenceEqual(input.InstrumentationTypes)
+                    this._InstrumentationTypes == input._InstrumentationTypes ||
+                    this._InstrumentationTypes != null &&
+                    input._InstrumentationTypes != null &&
+                    this._InstrumentationTypes.SequenceEqual(input._InstrumentationTypes)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.InstrumentationTypes != null)
-                    hashCode = hashCode * 59 + this.InstrumentationTypes.GetHashCode();
+                if (this._InstrumentationTypes != null)
+                    hashCode = hashCode * 59 + this._InstrumentationTypes.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

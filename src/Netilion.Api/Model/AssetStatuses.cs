@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class AssetStatuses :  IEquatable<AssetStatuses>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AssetStatuses" /> class.
+        /// Initializes a new instance of the <see cref="_AssetStatuses" /> class.
         /// </summary>
         /// <param name="assetStatuses">assetStatuses.</param>
         /// <param name="pagination">pagination.</param>
         public AssetStatuses(List<AssetStatusResponse> assetStatuses = default(List<AssetStatusResponse>), Pagination pagination = default(Pagination))
         {
-            this.AssetStatuses = assetStatuses;
+            this._AssetStatuses = assetStatuses;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets AssetStatuses
         /// </summary>
         [DataMember(Name="asset_statuses", EmitDefaultValue=false)]
-        public List<AssetStatusResponse> AssetStatuses { get; set; }
+        public List<AssetStatusResponse> _AssetStatuses { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AssetStatuses {\n");
-            sb.Append("  AssetStatuses: ").Append(AssetStatuses).Append("\n");
+            sb.Append("  AssetStatuses: ").Append(_AssetStatuses).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.AssetStatuses == input.AssetStatuses ||
-                    this.AssetStatuses != null &&
-                    input.AssetStatuses != null &&
-                    this.AssetStatuses.SequenceEqual(input.AssetStatuses)
+                    this._AssetStatuses == input._AssetStatuses ||
+                    this._AssetStatuses != null &&
+                    input._AssetStatuses != null &&
+                    this._AssetStatuses.SequenceEqual(input._AssetStatuses)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AssetStatuses != null)
-                    hashCode = hashCode * 59 + this.AssetStatuses.GetHashCode();
+                if (this._AssetStatuses != null)
+                    hashCode = hashCode * 59 + this._AssetStatuses.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

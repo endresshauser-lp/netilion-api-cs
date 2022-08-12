@@ -30,7 +30,7 @@ namespace Netilion.Api.Model
         public partial class ProductIdentifiers :  IEquatable<ProductIdentifiers>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProductIdentifiers" /> class.
+        /// Initializes a new instance of the <see cref="_ProductIdentifiers" /> class.
         /// </summary>
         /// <param name="productIdentifiers">productIdentifiers (required).</param>
         public ProductIdentifiers(List<NestedID> productIdentifiers = default(List<NestedID>))
@@ -42,7 +42,7 @@ namespace Netilion.Api.Model
             }
             else
             {
-                this.ProductIdentifiers = productIdentifiers;
+                this._ProductIdentifiers = productIdentifiers;
             }
         }
         
@@ -50,7 +50,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets ProductIdentifiers
         /// </summary>
         [DataMember(Name="product_identifiers", EmitDefaultValue=false)]
-        public List<NestedID> ProductIdentifiers { get; set; }
+        public List<NestedID> _ProductIdentifiers { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ProductIdentifiers {\n");
-            sb.Append("  ProductIdentifiers: ").Append(ProductIdentifiers).Append("\n");
+            sb.Append("  ProductIdentifiers: ").Append(_ProductIdentifiers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,10 +96,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.ProductIdentifiers == input.ProductIdentifiers ||
-                    this.ProductIdentifiers != null &&
-                    input.ProductIdentifiers != null &&
-                    this.ProductIdentifiers.SequenceEqual(input.ProductIdentifiers)
+                    this._ProductIdentifiers == input._ProductIdentifiers ||
+                    this._ProductIdentifiers != null &&
+                    input._ProductIdentifiers != null &&
+                    this._ProductIdentifiers.SequenceEqual(input._ProductIdentifiers)
                 );
         }
 
@@ -112,8 +112,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ProductIdentifiers != null)
-                    hashCode = hashCode * 59 + this.ProductIdentifiers.GetHashCode();
+                if (this._ProductIdentifiers != null)
+                    hashCode = hashCode * 59 + this._ProductIdentifiers.GetHashCode();
                 return hashCode;
             }
         }

@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class NodeTypes :  IEquatable<NodeTypes>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NodeTypes" /> class.
+        /// Initializes a new instance of the <see cref="_NodeTypes" /> class.
         /// </summary>
         /// <param name="nodeTypes">nodeTypes.</param>
         /// <param name="pagination">pagination.</param>
         public NodeTypes(List<NodeTypeResponse> nodeTypes = default(List<NodeTypeResponse>), Pagination pagination = default(Pagination))
         {
-            this.NodeTypes = nodeTypes;
+            this._NodeTypes = nodeTypes;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets NodeTypes
         /// </summary>
         [DataMember(Name="node_types", EmitDefaultValue=false)]
-        public List<NodeTypeResponse> NodeTypes { get; set; }
+        public List<NodeTypeResponse> _NodeTypes { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class NodeTypes {\n");
-            sb.Append("  NodeTypes: ").Append(NodeTypes).Append("\n");
+            sb.Append("  NodeTypes: ").Append(_NodeTypes).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.NodeTypes == input.NodeTypes ||
-                    this.NodeTypes != null &&
-                    input.NodeTypes != null &&
-                    this.NodeTypes.SequenceEqual(input.NodeTypes)
+                    this._NodeTypes == input._NodeTypes ||
+                    this._NodeTypes != null &&
+                    input._NodeTypes != null &&
+                    this._NodeTypes.SequenceEqual(input._NodeTypes)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NodeTypes != null)
-                    hashCode = hashCode * 59 + this.NodeTypes.GetHashCode();
+                if (this._NodeTypes != null)
+                    hashCode = hashCode * 59 + this._NodeTypes.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

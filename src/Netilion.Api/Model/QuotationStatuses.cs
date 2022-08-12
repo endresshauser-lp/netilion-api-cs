@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class QuotationStatuses :  IEquatable<QuotationStatuses>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="QuotationStatuses" /> class.
+        /// Initializes a new instance of the <see cref="_QuotationStatuses" /> class.
         /// </summary>
         /// <param name="quotationStatuses">quotationStatuses.</param>
         /// <param name="pagination">pagination.</param>
         public QuotationStatuses(List<QuotationStatusResponse> quotationStatuses = default(List<QuotationStatusResponse>), Pagination pagination = default(Pagination))
         {
-            this.QuotationStatuses = quotationStatuses;
+            this._QuotationStatuses = quotationStatuses;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets QuotationStatuses
         /// </summary>
         [DataMember(Name="quotation_statuses", EmitDefaultValue=false)]
-        public List<QuotationStatusResponse> QuotationStatuses { get; set; }
+        public List<QuotationStatusResponse> _QuotationStatuses { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class QuotationStatuses {\n");
-            sb.Append("  QuotationStatuses: ").Append(QuotationStatuses).Append("\n");
+            sb.Append("  QuotationStatuses: ").Append(_QuotationStatuses).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.QuotationStatuses == input.QuotationStatuses ||
-                    this.QuotationStatuses != null &&
-                    input.QuotationStatuses != null &&
-                    this.QuotationStatuses.SequenceEqual(input.QuotationStatuses)
+                    this._QuotationStatuses == input._QuotationStatuses ||
+                    this._QuotationStatuses != null &&
+                    input._QuotationStatuses != null &&
+                    this._QuotationStatuses.SequenceEqual(input._QuotationStatuses)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.QuotationStatuses != null)
-                    hashCode = hashCode * 59 + this.QuotationStatuses.GetHashCode();
+                if (this._QuotationStatuses != null)
+                    hashCode = hashCode * 59 + this._QuotationStatuses.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class DocumentClassifications :  IEquatable<DocumentClassifications>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentClassifications" /> class.
+        /// Initializes a new instance of the <see cref="_DocumentClassifications" /> class.
         /// </summary>
         /// <param name="documentClassifications">documentClassifications.</param>
         /// <param name="pagination">pagination.</param>
         public DocumentClassifications(List<DocumentClassificationResponse> documentClassifications = default(List<DocumentClassificationResponse>), Pagination pagination = default(Pagination))
         {
-            this.DocumentClassifications = documentClassifications;
+            this._DocumentClassifications = documentClassifications;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets DocumentClassifications
         /// </summary>
         [DataMember(Name="document_classifications", EmitDefaultValue=false)]
-        public List<DocumentClassificationResponse> DocumentClassifications { get; set; }
+        public List<DocumentClassificationResponse> _DocumentClassifications { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocumentClassifications {\n");
-            sb.Append("  DocumentClassifications: ").Append(DocumentClassifications).Append("\n");
+            sb.Append("  DocumentClassifications: ").Append(_DocumentClassifications).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.DocumentClassifications == input.DocumentClassifications ||
-                    this.DocumentClassifications != null &&
-                    input.DocumentClassifications != null &&
-                    this.DocumentClassifications.SequenceEqual(input.DocumentClassifications)
+                    this._DocumentClassifications == input._DocumentClassifications ||
+                    this._DocumentClassifications != null &&
+                    input._DocumentClassifications != null &&
+                    this._DocumentClassifications.SequenceEqual(input._DocumentClassifications)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DocumentClassifications != null)
-                    hashCode = hashCode * 59 + this.DocumentClassifications.GetHashCode();
+                if (this._DocumentClassifications != null)
+                    hashCode = hashCode * 59 + this._DocumentClassifications.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class DocumentStatuses :  IEquatable<DocumentStatuses>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentStatuses" /> class.
+        /// Initializes a new instance of the <see cref="_DocumentStatuses" /> class.
         /// </summary>
         /// <param name="documentStatuses">documentStatuses.</param>
         /// <param name="pagination">pagination.</param>
         public DocumentStatuses(List<DocumentStatusResponse> documentStatuses = default(List<DocumentStatusResponse>), Pagination pagination = default(Pagination))
         {
-            this.DocumentStatuses = documentStatuses;
+            this._DocumentStatuses = documentStatuses;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets DocumentStatuses
         /// </summary>
         [DataMember(Name="document_statuses", EmitDefaultValue=false)]
-        public List<DocumentStatusResponse> DocumentStatuses { get; set; }
+        public List<DocumentStatusResponse> _DocumentStatuses { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocumentStatuses {\n");
-            sb.Append("  DocumentStatuses: ").Append(DocumentStatuses).Append("\n");
+            sb.Append("  DocumentStatuses: ").Append(_DocumentStatuses).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.DocumentStatuses == input.DocumentStatuses ||
-                    this.DocumentStatuses != null &&
-                    input.DocumentStatuses != null &&
-                    this.DocumentStatuses.SequenceEqual(input.DocumentStatuses)
+                    this._DocumentStatuses == input._DocumentStatuses ||
+                    this._DocumentStatuses != null &&
+                    input._DocumentStatuses != null &&
+                    this._DocumentStatuses.SequenceEqual(input._DocumentStatuses)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DocumentStatuses != null)
-                    hashCode = hashCode * 59 + this.DocumentStatuses.GetHashCode();
+                if (this._DocumentStatuses != null)
+                    hashCode = hashCode * 59 + this._DocumentStatuses.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

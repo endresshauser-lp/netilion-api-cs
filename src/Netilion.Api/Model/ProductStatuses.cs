@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class ProductStatuses :  IEquatable<ProductStatuses>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProductStatuses" /> class.
+        /// Initializes a new instance of the <see cref="_ProductStatuses" /> class.
         /// </summary>
         /// <param name="productStatuses">productStatuses.</param>
         /// <param name="pagination">pagination.</param>
         public ProductStatuses(List<ProductStatusResponse> productStatuses = default(List<ProductStatusResponse>), Pagination pagination = default(Pagination))
         {
-            this.ProductStatuses = productStatuses;
+            this._ProductStatuses = productStatuses;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets ProductStatuses
         /// </summary>
         [DataMember(Name="product_statuses", EmitDefaultValue=false)]
-        public List<ProductStatusResponse> ProductStatuses { get; set; }
+        public List<ProductStatusResponse> _ProductStatuses { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ProductStatuses {\n");
-            sb.Append("  ProductStatuses: ").Append(ProductStatuses).Append("\n");
+            sb.Append("  ProductStatuses: ").Append(_ProductStatuses).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.ProductStatuses == input.ProductStatuses ||
-                    this.ProductStatuses != null &&
-                    input.ProductStatuses != null &&
-                    this.ProductStatuses.SequenceEqual(input.ProductStatuses)
+                    this._ProductStatuses == input._ProductStatuses ||
+                    this._ProductStatuses != null &&
+                    input._ProductStatuses != null &&
+                    this._ProductStatuses.SequenceEqual(input._ProductStatuses)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ProductStatuses != null)
-                    hashCode = hashCode * 59 + this.ProductStatuses.GetHashCode();
+                if (this._ProductStatuses != null)
+                    hashCode = hashCode * 59 + this._ProductStatuses.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;

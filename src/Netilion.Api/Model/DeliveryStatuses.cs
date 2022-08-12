@@ -30,13 +30,13 @@ namespace Netilion.Api.Model
         public partial class DeliveryStatuses :  IEquatable<DeliveryStatuses>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeliveryStatuses" /> class.
+        /// Initializes a new instance of the <see cref="_DeliveryStatuses" /> class.
         /// </summary>
         /// <param name="deliveryStatuses">deliveryStatuses.</param>
         /// <param name="pagination">pagination.</param>
         public DeliveryStatuses(List<DeliveryStatusResponse> deliveryStatuses = default(List<DeliveryStatusResponse>), Pagination pagination = default(Pagination))
         {
-            this.DeliveryStatuses = deliveryStatuses;
+            this._DeliveryStatuses = deliveryStatuses;
             this.Pagination = pagination;
         }
         
@@ -44,7 +44,7 @@ namespace Netilion.Api.Model
         /// Gets or Sets DeliveryStatuses
         /// </summary>
         [DataMember(Name="delivery_statuses", EmitDefaultValue=false)]
-        public List<DeliveryStatusResponse> DeliveryStatuses { get; set; }
+        public List<DeliveryStatusResponse> _DeliveryStatuses { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -60,7 +60,7 @@ namespace Netilion.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeliveryStatuses {\n");
-            sb.Append("  DeliveryStatuses: ").Append(DeliveryStatuses).Append("\n");
+            sb.Append("  DeliveryStatuses: ").Append(_DeliveryStatuses).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,10 +97,10 @@ namespace Netilion.Api.Model
 
             return 
                 (
-                    this.DeliveryStatuses == input.DeliveryStatuses ||
-                    this.DeliveryStatuses != null &&
-                    input.DeliveryStatuses != null &&
-                    this.DeliveryStatuses.SequenceEqual(input.DeliveryStatuses)
+                    this._DeliveryStatuses == input._DeliveryStatuses ||
+                    this._DeliveryStatuses != null &&
+                    input._DeliveryStatuses != null &&
+                    this._DeliveryStatuses.SequenceEqual(input._DeliveryStatuses)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -118,8 +118,8 @@ namespace Netilion.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DeliveryStatuses != null)
-                    hashCode = hashCode * 59 + this.DeliveryStatuses.GetHashCode();
+                if (this._DeliveryStatuses != null)
+                    hashCode = hashCode * 59 + this._DeliveryStatuses.GetHashCode();
                 if (this.Pagination != null)
                     hashCode = hashCode * 59 + this.Pagination.GetHashCode();
                 return hashCode;
