@@ -1,0 +1,12 @@
+# Netilion.Api.Model.WebhookBase
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Url** | **string** | url of the webhook | 
+**EventTypes** | **List&lt;string&gt;** | Array of event types to be subscribed. | 
+**Properties** | [**WebhookBaseProperties**](WebhookBaseProperties.md) |  | [optional] 
+**Disabled** | **bool?** | Disables the webhook. | [optional] [default to false]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

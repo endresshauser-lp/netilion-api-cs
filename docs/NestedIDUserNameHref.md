@@ -1,0 +1,12 @@
+# Netilion.Api.Model.NestedIDUserNameHref
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **long?** | ID of the nested resources | [optional] 
+**FirstName** | **string** | email to the user | [optional] 
+**LastName** | **string** | email to the user | [optional] 
+**Href** | **string** | href to the nested resource | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

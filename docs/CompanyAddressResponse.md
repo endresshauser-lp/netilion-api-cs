@@ -1,0 +1,20 @@
+# Netilion.Api.Model.CompanyAddressResponse
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Street** | **string** | streetname | 
+**StreetNumber** | **string** | street number | [optional] 
+**ZipCode** | **string** | zip code of the city | 
+**City** | **string** | city name | 
+**RegionCode** | **string** | code of the region | [optional] 
+**CountryCode** | **string** | abbreviation of the country conform to ISO-3166 | 
+**Phone** | **string** | phone number | [optional] 
+**CompanyName** | **string** | company name | [optional] 
+**FirstName** | **string** | first_name | [optional] 
+**LastName** | **string** | last_name | [optional] 
+**Email** | **string** | email | [optional] 
+**CountryName** | **string** | name of the country | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

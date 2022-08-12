@@ -1,0 +1,11 @@
+# Netilion.Api.Model.SpecificationRequest
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Value** | **string** |  | [optional] 
+**Unit** | **string** |  | [optional] 
+**SourceTimestamp** | **string** | source time stamp of the value | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
