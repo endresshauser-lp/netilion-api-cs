@@ -3,23 +3,26 @@
     <metadata>
         <!-- The identifier that must be unique within the hosting gallery -->
         <id>$id$</id>
-        <title>Swagger Library</title>
+        <title>Netilion API Client</title>
 
         <!-- The package version number that is used when resolving dependencies -->
         <version>$version$</version>
 
-        <!-- Authors contain text that appears directly on the gallery -->
-        <authors>$author$</authors>
+        <owners>Endress+Hauser</owners>
 
-        <!-- Owners are typically nuget.org identities that allow gallery
-             users to earily find other packages by the same owners.  -->
-        <owners>$author$</owners>
+        <!-- Authors contain text that appears directly on the gallery -->
+        <authors>Andrey Dodonov, Dodonew</authors>
+
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <developmentDependency>false</developmentDependency>
 
         <!-- The description can be used in package manager UI. Note that the
              nuget.org gallery uses information you add in the portal. -->
-        <description>A library generated from a Swagger doc</description>
+        <description>Netilion API client generated from a Swagger doc</description>
+
+        <projectUrl>https://github.com/endresshauser-lp/netilion-api-cs</projectUrl>
+
+        <readme>README.md</readme>
 
         <!-- Dependencies are automatically installed when the package is installed -->
         <dependencies>
@@ -29,6 +32,8 @@
             <dependency id="RestSharp" version="105.1.0" />
 
         </dependencies>
+
+        <license type="expression">MIT</license>
     </metadata>
     <files>
 
